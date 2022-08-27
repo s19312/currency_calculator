@@ -15,7 +15,7 @@ public class CurrencyXMLParser {
 
     }
 
-    public double parseCurrency(String targetCurrency){
+    public double parseCurrency(TargetCurrency targetCurrency){
         try {
             File inputFile = new File(FIlE_NAME);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -28,7 +28,7 @@ public class CurrencyXMLParser {
                 Node nNode = nodeList.item(i);
                 Element element = (Element) nNode;
                 if(!element.hasChildNodes()){
-                    if(element.getAttributeNode("currency").getValue().equals(targetCurrency)){
+                    if(element.getAttributeNode("currency").getValue().equals(targetCurrency.name())){
                         return Double.parseDouble(element.getAttributeNode("rate").getValue());
                     }
                 }
