@@ -1,6 +1,4 @@
-package task.fedorchenko.currency_calculator;
-
-import java.io.Serializable;
+package main.fedorchenko.currency_calculator;
 
 public class EURCurrencyCalculator {
     private double eurValue;

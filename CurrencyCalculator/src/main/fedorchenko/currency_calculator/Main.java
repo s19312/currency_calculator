@@ -1,4 +1,4 @@
-package task.fedorchenko.currency_calculator;
+package main.fedorchenko.currency_calculator;
 
 public class Main {
 

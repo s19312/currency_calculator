@@ -1,4 +1,4 @@
-package task.fedorchenko.currency_calculator;
+package main.fedorchenko.currency_calculator;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
