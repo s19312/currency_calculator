@@ -2,11 +2,11 @@ package main.fedorchenko.currency_calculator;
 
 public class EURCurrencyCalculator {
     private double eurValue;
-    private String targetCurrency;
     private double rate;
+    private TargetCurrency targetCurrency;
     private CurrencyXMLParser parser;
 
-    public EURCurrencyCalculator(double eurValue, String targetCurrency){
+    public EURCurrencyCalculator(double eurValue, TargetCurrency targetCurrency){
         this.parser = new CurrencyXMLParser();
         setEurValue(eurValue);
         newTargetCurrency(targetCurrency);
@@ -16,15 +16,15 @@ public class EURCurrencyCalculator {
         setEurValue(newValue);
     }
 
-    public void newTargetCurrency(String newTarget){
+    public void newTargetCurrency(TargetCurrency newTarget){
         setTargetCurrency(newTarget);
         setRate();
     }
-    public double exchange(){
+    public double calculate(){
         return this.eurValue * getRate();
     }
 
-    public String getTargetCurrency() {
+    public TargetCurrency getTargetCurrency() {
         return targetCurrency;
     }
 
@@ -37,17 +37,14 @@ public class EURCurrencyCalculator {
     }
 
     private void setRate(){
-        this.rate = parser.parseCurrency(getTargetCurrency());
+        this.rate = parser.parseCurrency(this.targetCurrency);
     }
 
     private void setEurValue(double eurValue) {
         this.eurValue = eurValue;
     }
 
-    private void setTargetCurrency(String targetCurrency) {
-        if(targetCurrency == null || targetCurrency.trim().equals("")){
-            throw new RuntimeException("Target currency Null or Empty!");
-        }
+    private void setTargetCurrency(TargetCurrency targetCurrency) {
         this.targetCurrency = targetCurrency;
     }
 }
