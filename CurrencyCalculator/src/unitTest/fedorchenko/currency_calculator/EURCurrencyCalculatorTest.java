@@ -37,7 +37,7 @@ class EURCurrencyCalculatorTest {
     @Test
     void changeEURvalue() {
         calculator.changeEURvalue(50);
-        assertEquals(50,calculator.getEurValue());
+        assertEquals(50,calculator.getEurAmount());
     }
 
 
