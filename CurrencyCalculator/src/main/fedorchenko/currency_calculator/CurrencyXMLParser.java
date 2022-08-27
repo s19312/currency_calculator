@@ -10,7 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class CurrencyXMLParser {
-    private static final String FIlE_NAME = "src/task/fedorchenko/currency_calculator/data/eurofxref-daily.xml";
+    private static final String FIlE_NAME = "src/main/fedorchenko/currency_calculator/data/eurofxref-daily.xml";
     public CurrencyXMLParser(){
 
     }
