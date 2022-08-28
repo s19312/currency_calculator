@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Insert amount of EUR: ");
         double eurAmount = Double.parseDouble(scanner.nextLine());
 
-        System.out.println("Provide target currency: ");
+        System.out.println("Provide target currency(e.g USD): ");
         try {
             targetCurrency = TargetCurrency.valueOf(scanner.nextLine());
             calculator = new EURCurrencyCalculator(eurAmount, targetCurrency);
